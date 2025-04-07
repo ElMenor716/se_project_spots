@@ -24,6 +24,11 @@ width: 413px;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 350px;
+  margin: 0;
 }
 
 .card__like-btn {
@@ -34,4 +39,28 @@ width: 413px;
   background-color: transparent;
   opacity: 40%;
   padding: 0;
+}
+
+@media screen and (max-width: 627px) {
+  .card {
+    width: 288px;
+  }
+
+  .card__image {
+    height: 288px;
+    width: 288px;
+  }
+
+  .card__title {
+    font-size: 16px;
+    line-height: 1;
+    max-width: 268px;
+  }
+
+  .card__like-btn {
+    width: 20px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
