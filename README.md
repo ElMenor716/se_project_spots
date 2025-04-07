@@ -20,3 +20,6 @@ Spots is a visually engaging web project that showcases different locations and 
 1. Clone the repository:
    ```sh
    git clone git@github.com:ElMenor716/se_project_spots.git
+
+## Deployment
+- [Deployment link] (https://elmenor716.github.io/se_project_spots/)
