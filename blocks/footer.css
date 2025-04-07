@@ -1,0 +1,8 @@
+.footer {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.footer__text {
+  color: rgba(33, 33, 33, 0.7);
+}
