@@ -23,3 +23,6 @@ Spots is a visually engaging web project that showcases different locations and 
 
 ## Deployment
 - [Deployment link] (https://elmenor716.github.io/se_project_spots/)
+
+## Video
+- [video link] (https://drive.google.com/file/d/1OtY-Y_jwWJiBMeIyMl0zGHgZTqw31hjT/view?usp=drive_link)
