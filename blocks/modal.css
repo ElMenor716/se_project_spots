@@ -13,7 +13,7 @@
   padding: 10px;
 
   transition-duration: 5s;
-  transition: opacity .5s ease, visibility .5s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .modal_is-opened {
@@ -79,7 +79,7 @@
 
 .modal__submit-btn {
   background-color: #212121;
-  color: #FCF5E5;
+  color: #fcf5e5;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
@@ -97,11 +97,6 @@
   .modal__input {
     font-size: 16px;
   }
-
-
-
-
-
 
   .modal__submit-btn {
     max-width: none;
