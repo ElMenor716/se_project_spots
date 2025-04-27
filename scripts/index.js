@@ -1,3 +1,30 @@
+const initialCards = [
+  {
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+  },
+  {
+    name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+  },
+  {
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+  },
+  {
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  },
+  {
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+];
+
 // for the profile edit button
 const profileEditBtn = document.querySelector(".profile__edit-btn");
 
@@ -14,7 +41,7 @@ const profileDescription = document.querySelector(".profile__description");
 
 const profileNameInput = editProfileModal.querySelector("#profile-name-input");
 const profileDescriptionInput = editProfileModal.querySelector(
-  "#profile-descripcion-input"
+  "#profile-description-input"
 );
 
 profileEditBtn.addEventListener("click", function () {
@@ -47,7 +74,7 @@ profileform.addEventListener("submit", handleProfileFormSubmit);
 
 const newPostForm = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
-const cardCaptionInput = newPostModal.querySelector("#card-Caption-input");
+const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 function handleNewPostFormSubmit(event) {
   event.preventDefault();
@@ -58,3 +85,8 @@ function handleNewPostFormSubmit(event) {
   newPostModal.classList.remove("modal_is-opened");
 }
 newPostForm.addEventListener("submit", handleNewPostFormSubmit);
+
+initialCards.forEach(function (item) {
+  console.log(item.name);
+  console.log(item.link);
+});
