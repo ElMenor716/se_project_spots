@@ -21,7 +21,7 @@
   opacity: 1;
 }
 
-.modal__containar {
+.modal__container {
   box-sizing: border-box;
   max-width: 730px;
   width: 100%;
