@@ -92,8 +92,8 @@ newPostCloseBtn.addEventListener("click", function () {
 
 function handleNewPostFormSubmit(event) {
   event.preventDefault();
-  console.log(cardImageInput.value);
-  console.log(cardCaptionInput.value);
+  //console.log(cardImageInput.value);
+  //console.log(cardCaptionInput.value);
   closeModal(newPostModal);
 }
 
@@ -103,6 +103,6 @@ newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 // Initial Cards Rendering
 // ==========================
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  //console.log(item.name);
+  //console.log(item.link);
 });
