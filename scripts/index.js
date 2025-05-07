@@ -90,14 +90,50 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+
+// ==========================
+// New Post Form Submit
+// ==========================
 function handleNewPostFormSubmit(event) {
   event.preventDefault();
   //console.log(cardImageInput.value);
   //console.log(cardCaptionInput.value);
   closeModal(newPostModal);
+
+  const inputValues = {
+    name: cardCaptionInput.value,
+    link: cardImageInput.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardList.prepend(cardElement);
+
+  closeModal(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleNewPostFormSubmit);
+
+// ==========================
+// Card Rendering
+// ==========================
+
+const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
+
+const cardList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  console.log(data);
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleElement = cardElement.querySelector(".card__title");
+  const cardImageElement = cardElement.querySelector(".card__image");
+
+  cardImageElement.src = data.link;
+  cardTitleElement.alt = data.name;
+  cardTitleElement.textContent = data.name;
+
+  return cardElement;
+}
+
 
 // ==========================
 // Initial Cards Rendering
@@ -105,4 +141,6 @@ newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 initialCards.forEach(function (item) {
   //console.log(item.name);
   //console.log(item.link);
+  const cardElement =  getCardElement(item);
+  cardList.append(cardElement);
 });
