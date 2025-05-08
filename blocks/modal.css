@@ -108,7 +108,7 @@
 
 .modal__preview-container {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .modal__close-preview-btn {
@@ -139,13 +139,13 @@
   color: #fff;
   background-color: #212121;
   font-size: 30px;
-  margin: 8px  0 0;
+  margin: 8px 0 0;
   padding: 4px 8px;
   border-radius: 8px;
   display: inline-block;
   max-width: 100%;
-    word-wrap: break-word;
-  }
+  word-wrap: break-word;
+}
 
 @media screen and (max-width: 627px) {
   .modal__container {

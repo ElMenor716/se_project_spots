@@ -76,7 +76,6 @@
   opacity: 100%;
   background-color: transparent;
   cursor: pointer;
-  z-index: 1;
 }
 
 .card__delete-btn:hover {
