@@ -130,24 +130,23 @@
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
 
-          <div class="modal modal_is-opened" id="preview-form">
-            <div class="modal__container">
-              <button
-              aria-label="Close preview"
-              type="button"
-              class="modal__close">
-              </button>
-
-              <img src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt=""
-              class="modal__preview-image" />
-
-              <p class="modal__caption">val thorens</p>
-
-            </div>
-
           </div>
         </div>
+        <div class="modal modal__preview modal_is-opened" id="preview-form">
+          <div class="modal__preview-container">
+            <button
+            aria-label="Close preview"
+            type="button"
+            class="modal__close-btn modal__close-preview-btn">
+            </button>
+
+            <img src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
+            alt=""
+            class="modal__preview-img" />
+
+            <p class="modal__preview-caption">val thorens</p>
+
+          </div>
       </div>
     </div>
     <script src="./scripts/index.js"></script>
