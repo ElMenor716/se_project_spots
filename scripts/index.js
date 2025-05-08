@@ -90,7 +90,6 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-
 // ==========================
 // New Post Form Submit
 // ==========================
@@ -114,10 +113,20 @@ function handleNewPostFormSubmit(event) {
 newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 
 // ==========================
+// preview image modal
+// ==========================
+const previewform = document.querySelector("#preview-form");
+const previewClosebtn = previewform.querySelector(".modal__close-btn");
+const previewImage = previewform.querySelector(".modal__preview-img");
+const previewCaption = previewform.querySelector(".modal__preview-caption");
+
+// ==========================
 // Card Rendering
 // ==========================
 
-const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
 
 const cardList = document.querySelector(".cards__list");
 
@@ -142,11 +151,19 @@ function getCardElement(data) {
     cardElement = null;
   });
 
+  cardImageElement.addEventListener("click", () => {
+    previewImage.src = data.link;
+    previewImage.alt = data.name;
+    previewCaption.textContent = data.name;
+    openModal(previewform);
+  });
+
+  previewClosebtn.addEventListener ("click", () => {
+    closeModal(previewform);
+  })
+
   return cardElement;
 }
-
-
-
 
 // ==========================
 // Initial Cards Rendering
@@ -154,8 +171,6 @@ function getCardElement(data) {
 initialCards.forEach(function (item) {
   //console.log(item.name);
   //console.log(item.link);
-  const cardElement =  getCardElement(item);
+  const cardElement = getCardElement(item);
   cardList.append(cardElement);
 });
-
-
