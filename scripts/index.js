@@ -131,8 +131,21 @@ function getCardElement(data) {
   cardTitleElement.alt = data.name;
   cardTitleElement.textContent = data.name;
 
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+  cardLikeBtn.addEventListener("click", () => {
+    cardLikeBtn.classList.toggle("card__like-btn_active");
+  });
+
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
+    cardElement = null;
+  });
+
   return cardElement;
 }
+
+
 
 
 // ==========================
@@ -144,3 +157,5 @@ initialCards.forEach(function (item) {
   const cardElement =  getCardElement(item);
   cardList.append(cardElement);
 });
+
+
