@@ -95,9 +95,6 @@ newPostCloseBtn.addEventListener("click", function () {
 // ==========================
 function handleNewPostFormSubmit(event) {
   event.preventDefault();
-  //console.log(cardImageInput.value);
-  //console.log(cardCaptionInput.value);
-  closeModal(newPostModal);
 
   const inputValues = {
     name: cardCaptionInput.value,
@@ -107,6 +104,11 @@ function handleNewPostFormSubmit(event) {
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
 
+  // Clear the input fields after adding the card
+  cardImageInput.value = "";
+  cardCaptionInput.value = "";
+
+  // Close the modal
   closeModal(newPostModal);
 }
 
@@ -148,7 +150,6 @@ function getCardElement(data) {
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtn.addEventListener("click", () => {
     cardElement.remove();
-    cardElement = null;
   });
 
   cardImageElement.addEventListener("click", () => {
@@ -158,9 +159,9 @@ function getCardElement(data) {
     openModal(previewform);
   });
 
-  previewClosebtn.addEventListener ("click", () => {
+  previewClosebtn.addEventListener("click", () => {
     closeModal(previewform);
-  })
+  });
 
   return cardElement;
 }
