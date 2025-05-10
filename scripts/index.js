@@ -105,7 +105,7 @@ function handleNewPostFormSubmit(event) {
   cardList.prepend(cardElement);
 
   // Clear the input fields after adding the card
-  cardImageInput.value = "";
+  newPostForm.reset();
   cardCaptionInput.value = "";
 
   // Close the modal

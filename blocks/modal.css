@@ -138,7 +138,8 @@
 .modal__preview-caption {
   color: #fff;
   background-color: #212121;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1.2;
   margin: 8px 0 0;
   padding: 4px 8px;
   border-radius: 8px;
@@ -175,7 +176,7 @@
     width: 100%;
   }
 
-  .modal__close-preview-btn {
+  .modal__close-btn_type_preview {
     top: -30px;
     right: 0;
   }
@@ -185,5 +186,9 @@
 
   .modal_type_preview {
     padding: 0 16px;
+  }
+
+  .modal__preview-caption {
+    font-size : 16px;
   }
 }
