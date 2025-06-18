@@ -34,7 +34,6 @@ const initialCards = [
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 
-  // Add Escape key listener
   function handleEscClose(evt) {
     if (evt.key === "Escape") {
       closeModal(modal);
@@ -42,10 +41,8 @@ function openModal(modal) {
   }
   document.addEventListener("keydown", handleEscClose);
 
-  // Store the handler so we can remove it later
   modal._handleEscClose = handleEscClose;
 
-  // Add overlay click listener
   function handleOverlayClick(evt) {
     if (evt.target === modal) {
       closeModal(modal);
@@ -53,20 +50,17 @@ function openModal(modal) {
   }
   modal.addEventListener("mousedown", handleOverlayClick);
 
-  // Store the handler so we can remove it later
   modal._handleOverlayClick = handleOverlayClick;
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 
-  // Remove Escape key listener
   if (modal._handleEscClose) {
     document.removeEventListener("keydown", modal._handleEscClose);
     modal._handleEscClose = null;
   }
 
-  // Remove overlay click listener
   if (modal._handleOverlayClick) {
     modal.removeEventListener("mousedown", modal._handleOverlayClick);
     modal._handleOverlayClick = null;
