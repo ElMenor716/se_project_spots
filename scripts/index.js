@@ -61,10 +61,11 @@ profileEditBtn.addEventListener("click", function () {
   openModal(editProfileModal);
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  resetValidation(editProfileModal, [
-    profileNameInput,
-    profileDescriptionInput,
-  ]);
+  resetValidation(
+    editProfileModal,
+    [profileNameInput, profileDescriptionInput],
+    settings
+  );
 });
 
 profileEditCloseBtn.addEventListener("click", function () {
@@ -115,6 +116,8 @@ function handleNewPostFormSubmit(event) {
 
   // Clear the input fields after adding the card
   newPostForm.reset();
+  const submitBtn = newPostForm.querySelector(settings.submitButtonSelector);
+  disableButton(submitBtn, settings);
 
   // Close the modal
   closeModal(newPostModal);
