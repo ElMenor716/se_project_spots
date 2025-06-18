@@ -33,6 +33,10 @@ const initialCards = [
 // ==========================
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  const submitBtn = modal.querySelector(".modal__submit-btn");
+  if (submitBtn) {
+    disableButton(submitBtn); // Disable on open
+  }
 }
 
 function closeModal(modal) {
@@ -57,6 +61,10 @@ profileEditBtn.addEventListener("click", function () {
   openModal(editProfileModal);
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+  resetValidation(editProfileModal, [
+    profileNameInput,
+    profileDescriptionInput,
+  ]);
 });
 
 profileEditCloseBtn.addEventListener("click", function () {
@@ -79,6 +87,7 @@ const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
+
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
 
@@ -106,7 +115,6 @@ function handleNewPostFormSubmit(event) {
 
   // Clear the input fields after adding the card
   newPostForm.reset();
-  cardCaptionInput.value = "";
 
   // Close the modal
   closeModal(newPostModal);
