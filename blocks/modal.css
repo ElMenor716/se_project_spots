@@ -122,7 +122,13 @@
 
 .modal__submit-btn_disabled {
   background-color: rgba(33, 33, 33, 0.4);
+  color: #fcf5e5;
   cursor: not-allowed;
+}
+
+.modal__submit-btn_disabled:hover {
+  opacity: 1;
+  transition-duration: 0.2s;
 }
 
 .modal__preview-container {
